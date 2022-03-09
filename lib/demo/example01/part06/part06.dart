@@ -1,0 +1,52 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:waterfall_flow/waterfall_flow.dart';
+
+/**
+ **@time
+ **@author xyc
+ **@description:
+ **/
+class PartDemo06Page extends StatefulWidget {
+  const PartDemo06Page({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return PartDemo06State();
+  }
+}
+
+class PartDemo06State extends State<PartDemo06Page> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("标题"),
+      ),
+      body: Padding(
+       padding: EdgeInsets.only(top: 0, bottom: 20),
+        ///https://github.com/fluttercandies/waterfall_flow/blob/master/README-ZH.md
+        ///yunso66
+        child: WaterfallFlow.builder(
+            padding: EdgeInsets.all(5),
+            gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 10,
+              lastChildLayoutTypeBuilder: (index) => index == 20
+                  ? LastChildLayoutType.foot
+                  : LastChildLayoutType.none,
+            ),
+            itemCount: 20,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                color: Colors.blue,
+                height: 100 + (index % 3) * 20,
+                child: Text("sddsds"),
+              );
+            }),
+      ),
+    );
+  }
+}
