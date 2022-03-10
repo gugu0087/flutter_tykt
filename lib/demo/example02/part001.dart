@@ -5,7 +5,7 @@ import 'package:flutter_tykt/generated/assets.dart';
 /**
  **@time
  **@author xyc
- **@description:
+ **@description: https://github.com/gugu0087/flutter_tykt
  **/
 class Part001DemoPage extends StatefulWidget {
   const Part001DemoPage({Key? key}) : super(key: key);
@@ -26,10 +26,11 @@ class Part001DemoState extends State<Part001DemoPage> {
       ),
       body: UnconstrainedBox(
         child: Container(
-          margin: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(20),
           padding: const EdgeInsets.all(10),
-          width: width - 20,
+          width: width - 40,
           color: Colors.black12,
+          /// row 横向  column 纵向布局
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -51,9 +52,10 @@ class Part001DemoState extends State<Part001DemoPage> {
                 children: [
                   ClipOval(
                     child: Image.asset(
-                      Assets.assetsHuoguo,
+                      Assets.assetsBg,
                       width: 20,
                       height: 20,
+                      fit: BoxFit.cover,
                     ),
                   ),
                   const Text("作者")

@@ -11,6 +11,8 @@ import 'demo/example01/part07/part07.dart';
 import 'demo/example02/part001.dart';
 import 'demo/example02/part002.dart';
 import 'demo/example02/part003.dart';
+import 'demo/example02/part006.dart';
+import 'demo/example02/part007.dart';
 
 void main() {
   DeviceUtils.setBarStatus();
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Part001DemoPage(),
+     // home: Part006DemoPage(),
+      home: Part007DemoPage(),
     );
   }
 }
