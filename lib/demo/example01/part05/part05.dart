@@ -5,8 +5,7 @@ import 'package:flutter_tykt/generated/assets.dart';
 
 /**
  **@time
- **@author xyc
- **@description:
+ **@description: CustomScrollView和轮播图
  **/
 class PartDemo05Page extends StatefulWidget {
   @override
@@ -21,11 +20,10 @@ class PartDemo05State extends State<PartDemo05Page> {
   }
 
   List<String> items = [];
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    ///初始化模拟数据
     for (int i = 0; i < 6; i++) {
       items.add("选项$i");
     }
@@ -41,7 +39,7 @@ class PartDemo05State extends State<PartDemo05Page> {
       ),
       body: CustomScrollView(
         slivers: [
-          /// 轮播图
+          /// 轮播图  Swiper
           SliverToBoxAdapter(
             child: SizedBox(
               height: 200,
@@ -61,6 +59,7 @@ class PartDemo05State extends State<PartDemo05Page> {
               ),
             ),
           ),
+          /// 展位图
           SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
@@ -85,6 +84,7 @@ class PartDemo05State extends State<PartDemo05Page> {
               );
             }, childCount: items.length),
           ),
+          /// 滑动列表
           SliverFixedExtentList(
             itemExtent: 50.0,
             delegate: SliverChildBuilderDelegate(

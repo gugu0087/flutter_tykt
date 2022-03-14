@@ -4,14 +4,8 @@ import 'package:flutter/painting.dart';
 
 import '../../generated/assets.dart';
 
-/**
- **@time
- **@author xyc
- **@description:
- **/
 class Part003DemoPage extends StatefulWidget {
   const Part003DemoPage({Key? key}) : super(key: key);
-
   @override
   State<StatefulWidget> createState() {
     return Part003DemoSate();
@@ -38,9 +32,9 @@ class Part003DemoSate extends State<Part003DemoPage> {
                   borderRadius: BorderRadius.all(Radius.circular(5))),
               child: Column(
                 children: [
+                  /// 图片横向铺满
                   Container(
                     width: double.infinity,
-
                     /// 强制在宽度上铺满
                     margin: const EdgeInsets.only(bottom: 5, right: 5),
                     child: Image.asset(
@@ -49,6 +43,7 @@ class Part003DemoSate extends State<Part003DemoPage> {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  /// 文案
                   const Padding(
                     padding: EdgeInsets.only(top: 10, bottom: 5),
                     child: Text(
@@ -57,6 +52,7 @@ class Part003DemoSate extends State<Part003DemoPage> {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
+                  /// Spacer() 弹簧控件 把 文案一和 99.992个控件分别撑开。
                   Padding(
                     padding: EdgeInsets.only(bottom: 5),
                     child: Row(
@@ -67,6 +63,7 @@ class Part003DemoSate extends State<Part003DemoPage> {
                       ],
                     ),
                   ),
+                  /// 三个控件均分  MainAxisAlignment.spaceBetween
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [

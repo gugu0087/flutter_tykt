@@ -2,11 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tykt/utils/toast.dart';
 
-/**
- **@time
- **@author xyc
- **@description:
- **/
 class PartDemo07Page extends StatefulWidget {
   const PartDemo07Page({Key? key}) : super(key: key);
 
@@ -47,7 +42,7 @@ class PartDemo07State extends State<PartDemo07Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("场景七 筛选栏"),
+        title: Text("场景 筛选栏"),
       ),
       body: Row(
         children: [

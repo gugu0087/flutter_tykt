@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tykt/demo/example02/self_build_dialog.dart';
 import 'package:flutter_tykt/utils/toast.dart';
 
-/**
- **@time
- **@author xyc
- **@description: 场景六 交互弹窗
- **/
 class Part006DemoPage extends StatefulWidget {
   const Part006DemoPage({Key? key}) : super(key: key);
 
@@ -66,7 +61,7 @@ class Part006DemoState extends State<Part006DemoPage> {
       ),
     );
   }
-
+  /// AlertDialog
   void showAlertDialog(BuildContext context) {
     showDialog(
         context: context,
@@ -91,7 +86,7 @@ class Part006DemoState extends State<Part006DemoPage> {
           );
         });
   }
-
+  /// SimpleDialog
   void showSimpleDialog(BuildContext context) {
     showDialog(
         context: context,
@@ -118,7 +113,7 @@ class Part006DemoState extends State<Part006DemoPage> {
           );
         });
   }
-
+  /// BottomDialog
   void showBottomDialog(BuildContext context) {
     showModalBottomSheet(
         context: context,
@@ -147,7 +142,7 @@ class Part006DemoState extends State<Part006DemoPage> {
           );
         });
   }
-
+   /// 自定义dianlog
   void showSelfBuildDialog(BuildContext context){
     showDialog(context: context, builder: (context){
       return SelfBuildDialog();

@@ -1,11 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 /**
  **@time
  **@author xyc
  **@description: 场景二 列表
  **/
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 class PartDemo02Page extends StatefulWidget {
   const PartDemo02Page({Key? key}) : super(key: key);
 
@@ -16,20 +17,17 @@ class PartDemo02Page extends StatefulWidget {
 }
 
 class PartDemo02State extends State<PartDemo02Page> {
-  List<String> netData = [];
-
+  List<String> netData = [];/// 创建一个装列表数据的数组list
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    ///给list 模拟添加数据 30个
     for (int i = 0; i < 30; i++) {
       netData.add("模拟数据$i");
     }
   }
 
-  ///  ListTile(
-  ///               title: Text(netData[index]),
-  ///             )
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,34 +35,28 @@ class PartDemo02State extends State<PartDemo02Page> {
         centerTitle: true,
         title: Text("列表数据"),
       ),
-      // body: ListView(
-      //   children: [
-      //     Text("sdsdsd"),
-      //     Text("sdsdsd"),
-      //     Text("sdsdsd"),
-      //     Text("sdsdsd"),
-      //     Text("sdsdsd"),
-      //     Text("sdsdsd"),
-      //   ],
-      // ),
-
+      /// body 里面通过listview.builder 创建列表
+      ///
       body: ListView.builder(
+        scrollDirection: Axis.horizontal,
           itemCount: netData.length,
+          /// itemBuilder 顾名思义就是创建列表每一项item的方法。
           itemBuilder: (context, index) {
+            /// return 返回的就是我们列表的每一项
             return Container(
               color: Colors.blue,
-              padding: EdgeInsets.only(left: 10,top: 10),
-              margin: EdgeInsets.only(top: 10, left: 10),
+              padding: const EdgeInsets.only(left: 10,top: 10),
+              margin: const EdgeInsets.only(top: 10, left: 10,right: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     netData[index],
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  const Text(
                     "模拟测试",
-                    style: TextStyle(color: Colors.black54, fontSize: 10),
+                    style: TextStyle(color: Colors.white, fontSize: 10),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 5),

@@ -18,16 +18,17 @@ class PartDemo03Page extends StatefulWidget {
     return PartDemo03State();
   }
 }
-
+///记得加 SingleTickerProviderStateMixin，因为 TabController 需要用到
 class PartDemo03State extends State<PartDemo03Page>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-  List<Widget> tabPages = [];
+  late TabController _tabController;/// 切换tab的时候需要一个控制器
+  List<Widget> tabPages = [];/// 需要切换的页面
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    /// 初始化数据
     _tabController = TabController(length: 3, vsync: this);
     tabPages.add(Part01ItemPage(1));
     tabPages.add(Part01ItemPage(2));
@@ -46,10 +47,11 @@ class PartDemo03State extends State<PartDemo03Page>
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
+            ///其他内容
             SliverToBoxAdapter(
               child: Container(
-                color: Colors.white,
-                height: 50,
+                color: Colors.brown,
+                height: 100,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
@@ -58,11 +60,12 @@ class PartDemo03State extends State<PartDemo03Page>
                         alignment: Alignment.center,
                         width: 60,
                         height: 30,
-                        child: Text("标题"),
+                        child: Text("标题",style: TextStyle(color: Colors.white),),
                       );
                     }),
               ),
             ),
+            /// 需要置顶的tab
             SliverPersistentHeader(
               pinned: true,
               delegate: SliverHeaderDelegate.fixedHeight(
@@ -106,7 +109,7 @@ class PartDemo03State extends State<PartDemo03Page>
             )
           ];
         },
-        // body: tabPages[1],
+        /// 需要切换的页面
         body: TabBarView(
           controller: _tabController,
           children: tabPages,

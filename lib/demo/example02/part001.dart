@@ -2,11 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tykt/generated/assets.dart';
 
-/**
- **@time
- **@author xyc
- **@description: https://github.com/gugu0087/flutter_tykt
- **/
+
 class Part001DemoPage extends StatefulWidget {
   const Part001DemoPage({Key? key}) : super(key: key);
 
@@ -24,6 +20,8 @@ class Part001DemoState extends State<Part001DemoPage> {
       appBar: AppBar(
         title: const Text("场景一 常用的item布局"),
       ),
+      /// UnconstrainedBox 不受最外层布局的约束，
+      /// Container 容器自己单独设置大小
       body: UnconstrainedBox(
         child: Container(
           margin: const EdgeInsets.all(20),
@@ -34,11 +32,13 @@ class Part001DemoState extends State<Part001DemoPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              /// 第一行标题文案 ，最大2行，超过2行 省略处理
               const Text(
                 "标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案标题文案",
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
+              /// 中间显示固定大小的图片
               Container(
                 margin: const EdgeInsets.only(top: 10, bottom: 5),
                 child: Image.asset(
@@ -48,6 +48,7 @@ class Part001DemoState extends State<Part001DemoPage> {
                   fit: BoxFit.cover,
                 ),
               ),
+              /// Row 实现头像和昵称的效果
               Row(
                 children: [
                   ClipOval(
@@ -61,6 +62,7 @@ class Part001DemoState extends State<Part001DemoPage> {
                   const Text("作者")
                 ],
               ),
+              ///  发布时间
               Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: Text(

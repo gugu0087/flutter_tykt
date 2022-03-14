@@ -4,11 +4,6 @@ import 'package:flutter/painting.dart';
 
 import '../../generated/assets.dart';
 
-/**
- **@time
- **@author xyc
- **@description:
- **/
 class Part004DemoPage extends StatefulWidget {
   const Part004DemoPage({Key? key}) : super(key: key);
 
@@ -38,25 +33,21 @@ class Part004DemoSate extends State<Part004DemoPage> {
               "居中内容",
             ),
           ),
-
           /// 设置边框
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.brown),
+            border: Border.all(width:2, color: Colors.brown),
             borderRadius: BorderRadius.all(const Radius.circular(5)),
           ),
         ),
         decoration: const ShapeDecoration(
-
             ///color: Colors.white,
             ///设置渐变色
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.white, Colors.blue]),
-
+                colors: [Colors.white,Colors.blue]),
             /// 设置背景颜色
             shape: RoundedRectangleBorder(
-
                 /// 设置背景角度
                 borderRadius: BorderRadius.all(Radius.circular(10)))),
       ),

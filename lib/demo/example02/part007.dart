@@ -1,17 +1,10 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tykt/demo/example02/self_build_dialog.dart';
-import 'package:flutter_tykt/utils/toast.dart';
 import 'package:video_player/video_player.dart';
-
 import '../../utils/device_utils.dart';
 
-/**
- **@time
- **@author xyc
- **@description: 场景七 视频播放
- **/
+
 class Part007DemoPage extends StatefulWidget {
   const Part007DemoPage({Key? key}) : super(key: key);
 
@@ -37,6 +30,7 @@ class Part007DemoState extends State<Part007DemoPage> {
 
   bool isInitFinish = false;
 
+  /// 初始化视频播放控件
   initVideoPlay() async {
     videoPlayerController = VideoPlayerController.network(videoUrl);
     await videoPlayerController.initialize().then((value) => {
@@ -54,6 +48,7 @@ class Part007DemoState extends State<Part007DemoPage> {
   Widget build(BuildContext context) {
     double height = 200;
     if (isInitFinish) {
+      /// 视频播放器 widget
       playerWidget = Chewie(
         controller: chewieController,
       );

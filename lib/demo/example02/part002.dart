@@ -1,14 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-
 import '../../generated/assets.dart';
 
-/**
- **@time
- **@author xyc
- **@description:
- **/
 class Part002DemoPage extends StatefulWidget {
   const Part002DemoPage({Key? key}) : super(key: key);
 
@@ -36,8 +30,10 @@ class Part002DemoSate extends State<Part002DemoPage> {
                   shape: BoxShape.rectangle,
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(5))),
+              /// 整体上下结构 用 Column
               child: Column(
                 children: [
+                  /// 上半部分是横向结构用row
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -51,6 +47,7 @@ class Part002DemoSate extends State<Part002DemoPage> {
                         ),
                       ),
                       Expanded(
+                        /// 上半部分的右边是上下结构的2个文案
                           child: Column(
                         children: const [
                           Text(
@@ -71,6 +68,7 @@ class Part002DemoSate extends State<Part002DemoPage> {
                       ))
                     ],
                   ),
+                  /// 下半部分是一段文案
                   const Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(

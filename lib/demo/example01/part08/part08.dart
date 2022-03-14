@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../part01/part01_item_page.dart';
 
-/**
- **@time
- **@author xyc
- **@description:
- **/
+
 class PartDemo08Page extends StatefulWidget {
   const PartDemo08Page({Key? key}) : super(key: key);
 
@@ -19,7 +15,6 @@ class PartDemo08Page extends StatefulWidget {
 
 class PartDemo08Sate extends State<PartDemo08Page> {
   int selectType = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +25,7 @@ class PartDemo08Sate extends State<PartDemo08Page> {
         children: [
           SizedBox(
             height: 50,
+            ///  第一个ListView 的 scrollDirection 设置成  Axis.horizontal
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 20,
@@ -46,6 +42,7 @@ class PartDemo08Sate extends State<PartDemo08Page> {
                   );
                 }),
           ),
+           /// 第二个 ListView 在 Part01ItemPage 里面
            Expanded(child: Part01ItemPage(selectType)),
         ],
       ),

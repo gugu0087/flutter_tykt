@@ -2,11 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
-/**
- **@time
- **@author xyc
- **@description:
- **/
 class PartDemo06Page extends StatefulWidget {
   const PartDemo06Page({Key? key}) : super(key: key);
 
@@ -25,9 +20,9 @@ class PartDemo06State extends State<PartDemo06Page> {
         title: Text("标题"),
       ),
       body: Padding(
-       padding: EdgeInsets.only(top: 0, bottom: 20),
-        ///https://github.com/fluttercandies/waterfall_flow/blob/master/README-ZH.md
-        ///yunso66
+        padding: EdgeInsets.only(top: 0, bottom: 20),
+        /// WaterfallFlow 实现瀑布流效果
+        /// SliverWaterfallFlowDelegateWithFixedCrossAxisCount 设置item项的间距等
         child: WaterfallFlow.builder(
             padding: EdgeInsets.all(5),
             gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
@@ -39,11 +34,19 @@ class PartDemo06State extends State<PartDemo06Page> {
                   : LastChildLayoutType.none,
             ),
             itemCount: 20,
+            /// itemBuilder 构建瀑布流item项
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 color: Colors.blue,
-                height: 100 + (index % 3) * 20,
-                child: Text("sddsds"),
+
+                /// 模拟高度不一致的样式
+                height: (100 + index * 20) >= 260 ? 200 : (100 + index * 20),
+                child: ListTile(
+                  title: Text(
+                    "我是内容$index",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               );
             }),
       ),
